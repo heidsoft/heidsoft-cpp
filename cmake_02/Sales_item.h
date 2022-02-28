@@ -1,4 +1,6 @@
 #include <string>
+#include <iostream>
+#include <ostream>
 // 定义销售商品类
 // 1. 类体可以为空，类体定义组成该类型的数据和操作
 // 2. 数据称为数据成员
@@ -18,11 +20,20 @@
 // 16. double rate;  没有extern，所以是定义
 // 17. 构造函数是特殊的成员函数，与类同名，没有返回类型，构造函数也有形参（可能为空）和函数体
 // 18. 一个类可以有多个构造函数
-// 19.
-
 
 class Sales_item
 {
+    // 1. 操作符重载和友元关系
+    // 2. 操作符定义为非成员函数时，通常必须将他们设置为锁操作类的友元
+    // 3. 在某些情况下，允许特定的非成员函数访问一个类的私有成员，同时仍然阻止一般的访问。
+    // 4. 友元（friend）机制允许一个类将对齐非公有成员的访问授予指定的函数或类。
+    // 5. 友元声明以关键字friend开始，只能出现在类定义的内部
+    // 6. 友元声明可以出现在类中任何地方
+    // 7. 通常将 友元声明成组地放在类定义的开始或者结尾
+    friend std::ostream& 
+        operator>>(std::istream&, Sales_item&);
+    friend std::ostream& 
+        operator<<(std::ostream&,const Sales_item&);
 private:
     /* data */
     std::string isbn; // 图书编号
@@ -43,8 +54,9 @@ public:
     // 11. 如果对象在局部作用域中定义，则这些成员没有初始化 
     Sales_item(/* args */): units_sold(0),revenue(0.0){};
     ~Sales_item();
+    // 1. 不将加操作符设置为友元，它可以用public 成员opertator+= 实现
+    Sales_item& operator+=(const Sales_item&);
 };
-
 Sales_item::Sales_item(/* args */)
 {
 }
@@ -52,3 +64,5 @@ Sales_item::Sales_item(/* args */)
 Sales_item::~Sales_item()
 {
 }
+
+Sales_item operator+(const Sales_item&, const Sales_item&);
