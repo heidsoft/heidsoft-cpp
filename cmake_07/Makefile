@@ -57,10 +57,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06
+CMAKE_SOURCE_DIR = /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06
+CMAKE_BINARY_DIR = /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/CMakeFiles /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07/CMakeFiles /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,77 +129,42 @@ heidsoft.exe/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/build
 .PHONY : heidsoft.exe/fast
 
-asyncmonitorsignal.o: asyncmonitorsignal.c.o
-.PHONY : asyncmonitorsignal.o
+#=============================================================================
+# Target rules for targets named add
 
-# target to build an object file
-asyncmonitorsignal.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o
-.PHONY : asyncmonitorsignal.c.o
+# Build rule for target.
+add: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 add
+.PHONY : add
 
-asyncmonitorsignal.i: asyncmonitorsignal.c.i
-.PHONY : asyncmonitorsignal.i
+# fast build rule for target.
+add/fast:
+	$(MAKE) $(MAKESILENT) -f add/CMakeFiles/add.dir/build.make add/CMakeFiles/add.dir/build
+.PHONY : add/fast
 
-# target to preprocess a source file
-asyncmonitorsignal.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.i
-.PHONY : asyncmonitorsignal.c.i
-
-asyncmonitorsignal.s: asyncmonitorsignal.c.s
-.PHONY : asyncmonitorsignal.s
-
-# target to generate assembly for a file
-asyncmonitorsignal.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.s
-.PHONY : asyncmonitorsignal.c.s
-
-main.o: main.c.o
+main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/main.c.o
-.PHONY : main.c.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-main.i: main.c.i
+main.i: main.cpp.i
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/main.c.s
-.PHONY : main.c.s
-
-restart.o: restart.c.o
-.PHONY : restart.o
-
-# target to build an object file
-restart.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/restart.c.o
-.PHONY : restart.c.o
-
-restart.i: restart.c.i
-.PHONY : restart.i
-
-# target to preprocess a source file
-restart.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/restart.c.i
-.PHONY : restart.c.i
-
-restart.s: restart.c.s
-.PHONY : restart.s
-
-# target to generate assembly for a file
-restart.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/restart.c.s
-.PHONY : restart.c.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/heidsoft.exe.dir/build.make CMakeFiles/heidsoft.exe.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -209,16 +174,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... add"
 	@echo "... heidsoft.exe"
-	@echo "... asyncmonitorsignal.o"
-	@echo "... asyncmonitorsignal.i"
-	@echo "... asyncmonitorsignal.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... restart.o"
-	@echo "... restart.i"
-	@echo "... restart.s"
 .PHONY : help
 
 

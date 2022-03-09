@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/asyncmonitorsignal.c" "CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o" "gcc" "CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o.d"
   "/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/main.c" "CMakeFiles/heidsoft.exe.dir/main.c.o" "gcc" "CMakeFiles/heidsoft.exe.dir/main.c.o.d"
+  "/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/restart.c" "CMakeFiles/heidsoft.exe.dir/restart.c.o" "gcc" "CMakeFiles/heidsoft.exe.dir/restart.c.o.d"
   )
 
 # Targets to which this target links.

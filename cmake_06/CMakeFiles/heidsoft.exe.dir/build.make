@@ -83,17 +83,49 @@ CMakeFiles/heidsoft.exe.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/heidsoft.exe.dir/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/main.c -o CMakeFiles/heidsoft.exe.dir/main.c.s
 
+CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o: CMakeFiles/heidsoft.exe.dir/flags.make
+CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o: asyncmonitorsignal.c
+CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o: CMakeFiles/heidsoft.exe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o -MF CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o.d -o CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o -c /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/asyncmonitorsignal.c
+
+CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/asyncmonitorsignal.c > CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.i
+
+CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/asyncmonitorsignal.c -o CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.s
+
+CMakeFiles/heidsoft.exe.dir/restart.c.o: CMakeFiles/heidsoft.exe.dir/flags.make
+CMakeFiles/heidsoft.exe.dir/restart.c.o: restart.c
+CMakeFiles/heidsoft.exe.dir/restart.c.o: CMakeFiles/heidsoft.exe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/heidsoft.exe.dir/restart.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/heidsoft.exe.dir/restart.c.o -MF CMakeFiles/heidsoft.exe.dir/restart.c.o.d -o CMakeFiles/heidsoft.exe.dir/restart.c.o -c /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/restart.c
+
+CMakeFiles/heidsoft.exe.dir/restart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/heidsoft.exe.dir/restart.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/restart.c > CMakeFiles/heidsoft.exe.dir/restart.c.i
+
+CMakeFiles/heidsoft.exe.dir/restart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/heidsoft.exe.dir/restart.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/restart.c -o CMakeFiles/heidsoft.exe.dir/restart.c.s
+
 # Object files for target heidsoft.exe
 heidsoft_exe_OBJECTS = \
-"CMakeFiles/heidsoft.exe.dir/main.c.o"
+"CMakeFiles/heidsoft.exe.dir/main.c.o" \
+"CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o" \
+"CMakeFiles/heidsoft.exe.dir/restart.c.o"
 
 # External object files for target heidsoft.exe
 heidsoft_exe_EXTERNAL_OBJECTS =
 
 heidsoft.exe: CMakeFiles/heidsoft.exe.dir/main.c.o
+heidsoft.exe: CMakeFiles/heidsoft.exe.dir/asyncmonitorsignal.c.o
+heidsoft.exe: CMakeFiles/heidsoft.exe.dir/restart.c.o
 heidsoft.exe: CMakeFiles/heidsoft.exe.dir/build.make
 heidsoft.exe: CMakeFiles/heidsoft.exe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable heidsoft.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_06/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable heidsoft.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/heidsoft.exe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

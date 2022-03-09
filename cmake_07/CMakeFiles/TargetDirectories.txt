@@ -1,0 +1,6 @@
+/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07/CMakeFiles/rebuild_cache.dir
+/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07/CMakeFiles/edit_cache.dir
+/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07/CMakeFiles/heidsoft.exe.dir
+/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07/add/CMakeFiles/rebuild_cache.dir
+/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07/add/CMakeFiles/edit_cache.dir
+/Users/heidsoft/Downloads/research/heidsoft-cpp/cmake_07/add/CMakeFiles/add.dir
