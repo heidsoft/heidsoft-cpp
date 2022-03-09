@@ -21,3 +21,9 @@ Consolidate compiler generated dependencies of target heidsoft.exe
 [100%] Linking CXX executable heidsoft.exe
 [100%] Built target heidsoft.exe
 ```
+
+## cmake poco 编译
+```
+cmake -H/Users/heidsoft/Downloads/research/poco -B/Users/heidsoft/Downloads/research/poco-build
+cmake --build /Users/heidsoft/Downloads/research/poco-build
+```
