@@ -1,0 +1,66 @@
+cc -c 阻止编译器创建一个完整程序
+
+➜  heidsoft-cpp git:(master) ✗ cd cmake_12 
+➜  cmake_12 git:(master) ✗ cc -c bill.c fred.c 
+➜  cmake_12 git:(master) ✗ ls -alh
+total 40
+drwxr-xr-x   7 heidsoft  staff   224B  3 12 14:28 .
+drwxr-xr-x  17 heidsoft  staff   544B  3 12 14:21 ..
+-rw-r--r--   1 heidsoft  staff    88B  3 12 14:24 bill.c
+-rw-r--r--   1 heidsoft  staff   784B  3 12 14:28 bill.o
+-rw-r--r--   1 heidsoft  staff   105B  3 12 14:23 fred.c
+-rw-r--r--   1 heidsoft  staff   800B  3 12 14:28 fred.o
+-rw-r--r--   1 heidsoft  staff    46B  3 12 14:26 readme
+➜  cmake_12 git:(master) ✗ 
+
+➜  cmake_12 git:(master) ✗ cc -c call_lib_main.c 
+➜  cmake_12 git:(master) ✗ cc -o call_lib_main call_lib_main.o bill.o 
+➜  cmake_12 git:(master) ✗ ./call_lib_main 
+bill: 传入参数是call bill 函数测试。
+➜  cmake_12 git:(master) ✗ 
+
+
+NAME
+     ar – create and maintain library archives
+
+SYNOPSIS
+     ar -d [-TLsv] archive file ...
+     ar -m [-TLsv] archive file ...
+     ar -m [-abiTLsv] position archive file ...
+     ar -p [-TLsv] archive [file ...]
+     ar -q [-cTLsv] archive file ...
+     ar -r [-cuTLsv] archive file ...
+     ar -r [-abciuTLsv] position archive file ...
+     ar -t [-TLsv] archive [file ...]
+     ar -x [-ouTLsv] archive [file ...]
+
+DESCRIPTION
+     The ar utility creates and maintains groups of files combined into an archive.  Once an archive has been created, new files can be
+     added and existing files can be extracted, deleted, or replaced.
+
+
+➜  cmake_12 git:(master) ✗ ar crv libfoo.a bill.o fred.o 
+a - bill.o
+a - fred.o
+➜  cmake_12 git:(master) ✗ ls -l
+total 176
+-rw-r--r--  1 heidsoft  staff     88  3 12 14:24 bill.c
+-rw-r--r--  1 heidsoft  staff    784  3 12 14:28 bill.o
+-rwxr-xr-x  1 heidsoft  staff  49496  3 12 14:33 call_lib_main
+-rw-r--r--  1 heidsoft  staff    407  3 12 14:34 call_lib_main.c
+-rw-r--r--  1 heidsoft  staff    816  3 12 14:33 call_lib_main.o
+-rw-r--r--  1 heidsoft  staff    105  3 12 14:23 fred.c
+-rw-r--r--  1 heidsoft  staff    800  3 12 14:28 fred.o
+-rw-r--r--  1 heidsoft  staff     66  3 12 14:31 lib.h
+-rw-r--r--  1 heidsoft  staff   1856  3 12 14:35 libfoo.a
+-rw-r--r--  1 heidsoft  staff   1523  3 12 14:35 readme
+➜  cmake_12 git:(master) ✗ ranlib libfoo.a 
+➜  cmake_12 git:(master) ✗ cc -o call_lib_main_by_lib call_lib_main.o libfoo.a 
+➜  cmake_12 git:(master) ✗ ./call_lib_main_by_lib 
+bill: 传入参数是call bill 函数测试。
+➜  cmake_12 git:(master) ✗ 
+
+
+➜  cmake_12 git:(master) ✗ cc -o call_lib_main_by_lib_name call_lib_main.o -L. -lfoo
+➜  cmake_12 git:(master) ✗ ./call_lib_main_by_lib_name 
+bill: 传入参数是call bill 函数测试。
