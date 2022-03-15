@@ -1,1 +1,31 @@
 函数指针
+
+https://www.cs.uaf.edu/courses/cs301/2014-fall/notes/methods/
+https://www.cs.uaf.edu/courses/cs301/2014-fall/notes/
+https://docs.huihoo.com/doxygen/linux/kernel/3.7/include_2linux_2backlight_8h_source.html
+
+
+/* a function taking two int arguments and returning an int */
+int function(int x, int y);
+
+/* a pointer to such a function */
+int (*pointer)(int x, int y);
+
+
+
+
+/* Functional "hello world" program */
+#include <stdio.h>
+
+int
+main(int argc, char **argv)
+{
+    /* function for emitting text */
+    int (*say)(const char *);
+
+    say = puts;
+
+    say("hello world");
+
+    return 0;
+}
