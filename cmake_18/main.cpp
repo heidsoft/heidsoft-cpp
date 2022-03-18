@@ -71,26 +71,28 @@ void Child::func1()
 // 子类方法实现
 void Child::func2()
 {
-    cout << "Child::fun1()" << endl;
+    cout << "ChildClass::fun2()" << endl;
 }
 
 // 子类方法实现
 void Child::func3()
 {
-    cout << "Child::fun1()" << endl;
+    cout << "Child::fun3()" << endl;
 }
 
-Func getAddr(void* obj,unsigned int offset)
+// 返回函数指针
+Func getAddr(void *obj,unsigned int offset)
 {
     cout<<"======================="<<endl;
-    void* vptr_addr = (void *)*(unsigned long *)obj;  //64位操作系统，占8字节，通过*(unsigned long *)obj取出前8字节，即vptr指针
+    // 强制转换
+    void *vptr_addr = (void *)*(unsigned long *)obj;  //64位操作系统，占8字节，通过*(unsigned long *)obj取出前8字节，即vptr指针
     printf("vptr_addr:%p\n",vptr_addr);
 
     /**
      * @brief 通过vptr指针访问virtual table，因为虚表中每个元素(虚函数指针)在64位编译器下是8个字节，因此通过*(unsigned long *)vptr_addr取出前8字节，
      * 后面加上偏移量就是每个函数的地址！
      */
-    void* func_addr = (void *)*((unsigned long *)vptr_addr+offset);
+    void *func_addr = (void *)*((unsigned long *)vptr_addr+offset);
     printf("func_addr:%p\n",func_addr);
     return (Func)func_addr;
 }
@@ -111,26 +113,36 @@ int main(int argc, char const *argv[])
     ptr.func3();
 
     //子类实例
-    Child child1;
-    child1.func1();
-    child1.func2();
-    child1.func3();
+    Child ch1;
+    ch1.func1();
+    ch1.func2();
+    ch1.func3();
 
     // 父类引用，指向子类
     Base *pchild = new Child(); // 基类指针指向派生类实例
     pchild->func1();
     pchild->func2();
     pchild->func3();
-
+    cout<<"======================="<<endl;
     Base &pBase = ptr; // 基类引用指向基类实例
-    Base &pChild = child1; // 基类引用指向派生类实例
+    Base &pCh = ch1; // 基类引用指向派生类实例
+
+    cout<<"基类对象直接调用"<<endl;
+    ptr.func1();
+    cout<<"基类引用指向派生类实例"<<endl;
+    pBase.func1(); 
+    cout<<"基类指针指向派生类实例并调用虚函数"<<endl;
+    pchild->func1();
+    cout<<"基类引用指向基类实例并调用虚函数"<<endl;
+    pCh.func1();
 
     // 虚函数表，地址相差多少
-    Func f1 = getAddr(base, 0);
+    Func f1 = getAddr(pchild, 0);
     (*f1)();
-    Func f2 = getAddr(base, 1);
+    Func f2 = getAddr(pchild, 1);
     (*f2)();
     
+    delete pchild;
     delete base;
     return 0;
 }
