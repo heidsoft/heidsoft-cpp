@@ -1,6 +1,4 @@
-# heidsoft-cmake
-
-c++ 工程化训练
+# c++工程化训练
 
 
 ## 生成Makefile
@@ -27,3 +25,7 @@ Consolidate compiler generated dependencies of target heidsoft.exe
 cmake -H/Users/heidsoft/Downloads/research/poco -B/Users/heidsoft/Downloads/research/poco-build
 cmake --build /Users/heidsoft/Downloads/research/poco-build
 ```
+
+# 系统函数
+## select 函数
+[select](#cmake_20/readme)
