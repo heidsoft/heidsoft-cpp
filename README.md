@@ -28,4 +28,4 @@ cmake --build /Users/heidsoft/Downloads/research/poco-build
 
 # 系统函数
 ## select 函数
-[select](#cmake_20/readme)
+[select](./cmake_20/readme#select说明)
