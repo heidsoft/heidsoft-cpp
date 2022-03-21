@@ -15,8 +15,28 @@
 
 ```
 #include <sys/socket>
-int socket(int domain, int type, int protocl);
+int socket(int domain, int type, int protocol);
 ```
-
 返回值：若成功则返回文件（套接字）描述符，如果出错则返回 -1 
+
+参数domain 域确定通信的特性，包括地址格式。 
+表示各个域都以AF_开头，意指地址族（address family）
+AF_INET ipv4 因特网域
+AF_INET6 ipv6 因特网域
+AF_UNIX UNIX 域
+
+参数type 确定套接字的类型，进一步确定通信特征
+SOCK_DGRAM   长度固定的，无连接的不可靠报文传递
+SOCK_RAW  IP协议的数据接口
+SOCK_SEQPACKET 长度固定/有序/可靠的面向连接报文传递
+SOCK_STREAM 有序/可靠/双向的面向连接字节流
+
+参数protocol,通常是0，表示按给定的域和套接字类型选择默认协议
+当对同一域和套接字类型支持多个协议时，可以使用protocol 参数选择一个
+特定协议。 在AF_INET 通信域中套接字类型SOCK_STREAAM 的默认协议时TCP（传输控制协议）
+在AF_INET 通信域中套接字类型SOCK_DGRAM的默认协议时UDP（用户数据报协议）
+
+SOCK_RAW 套接字提供一个数据报接口用于直接访问下面的网络层（在AF_INET 域中为IP）
+使用这个接口时，应用程序负责构造自己的协议首部。这是因为传输协议（TCP和UDP）被绕过了
+当创建一个原始套接字时需要超级用户权限，用以防止恶意程序绕过内建安全机制来创建报文。
 
